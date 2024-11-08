@@ -1,0 +1,25 @@
+%YAML 1.3
+---
+- Rule:
+  - Test: thumb_wheel_up
+  - Execute: [pactl, set-sink-volume, '@DEFAULT_SINK@', +1%]
+- Rule:
+  - Test: thumb_wheel_down
+  - Execute: [pactl, set-sink-volume, '@DEFAULT_SINK@', -1%]
+...
+---
+- Rule:
+  - MouseGesture: Mouse Right
+  - Execute: [hyprctl, dispatch, movetoworkspace, '+1']
+- Rule:
+  - MouseGesture: Mouse Left
+  - Execute: [hyprctl, dispatch, movetoworkspace, '-1']
+...
+---
+- Rule:
+  - MouseGesture: Mouse Up
+  - Execute: [hyprctl, dispatch, togglefloating]
+- Rule:
+  - MouseGesture: Mouse Down
+  - Execute: [hyprctl, dispatch, togglesplit]
+...
