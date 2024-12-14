@@ -1,4 +1,4 @@
 #!/bin/sh
-ags -q
+agsv1 -q
 notify-send "HyprPanel Restarted"
-ags
+agsv1
