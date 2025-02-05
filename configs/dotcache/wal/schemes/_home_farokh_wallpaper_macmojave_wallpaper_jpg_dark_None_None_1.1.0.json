@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/farokh/wallpaper/macmojave_wallpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#080E1F",
+        "foreground": "#acb0bb",
+        "cursor": "#acb0bb"
+    },
+    "colors": {
+        "color0": "#080E1F",
+        "color1": "#364A68",
+        "color2": "#41495E",
+        "color3": "#4A576F",
+        "color4": "#55637B",
+        "color5": "#61697E",
+        "color6": "#556982",
+        "color7": "#acb0bb",
+        "color8": "#787b82",
+        "color9": "#364A68",
+        "color10": "#41495E",
+        "color11": "#4A576F",
+        "color12": "#55637B",
+        "color13": "#61697E",
+        "color14": "#556982",
+        "color15": "#acb0bb"
+    }
+}

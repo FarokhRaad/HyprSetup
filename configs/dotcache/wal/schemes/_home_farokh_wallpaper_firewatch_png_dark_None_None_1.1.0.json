@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/farokh/wallpaper/firewatch.png",
+    "alpha": "100",
+    "special": {
+        "background": "#020310",
+        "foreground": "#bac0b3",
+        "cursor": "#bac0b3"
+    },
+    "colors": {
+        "color0": "#020310",
+        "color1": "#194759",
+        "color2": "#2A4759",
+        "color3": "#345566",
+        "color4": "#3D6271",
+        "color5": "#5B5A4D",
+        "color6": "#426876",
+        "color7": "#bac0b3",
+        "color8": "#82867d",
+        "color9": "#194759",
+        "color10": "#2A4759",
+        "color11": "#345566",
+        "color12": "#3D6271",
+        "color13": "#5B5A4D",
+        "color14": "#426876",
+        "color15": "#bac0b3"
+    }
+}

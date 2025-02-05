@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/farokh/wallpaper/astronaut_jellyfish.jpg"
+let background = "#0F161E"
+let foreground = "#8ae1c1"
+let cursor     = "#8ae1c1"
+
+" Colors
+let color0  = "#0F161E"
+let color1  = "#32514E"
+let color2  = "#595A59"
+let color3  = "#B85154"
+let color4  = "#30A95B"
+let color5  = "#B6A743"
+let color6  = "#94439B"
+let color7  = "#8ae1c1"
+let color8  = "#609d87"
+let color9  = "#32514E"
+let color10 = "#595A59"
+let color11 = "#B85154"
+let color12 = "#30A95B"
+let color13 = "#B6A743"
+let color14 = "#94439B"
+let color15 = "#8ae1c1"

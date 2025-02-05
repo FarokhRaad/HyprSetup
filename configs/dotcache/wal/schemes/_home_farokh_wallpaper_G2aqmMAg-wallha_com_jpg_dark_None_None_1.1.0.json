@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/farokh/wallpaper/G2aqmMAg-wallha.com.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#030E17",
+        "foreground": "#a4c8e1",
+        "cursor": "#a4c8e1"
+    },
+    "colors": {
+        "color0": "#030E17",
+        "color1": "#536378",
+        "color2": "#236796",
+        "color3": "#537096",
+        "color4": "#8D798F",
+        "color5": "#3584B8",
+        "color6": "#4890C0",
+        "color7": "#a4c8e1",
+        "color8": "#728c9d",
+        "color9": "#536378",
+        "color10": "#236796",
+        "color11": "#537096",
+        "color12": "#8D798F",
+        "color13": "#3584B8",
+        "color14": "#4890C0",
+        "color15": "#a4c8e1"
+    }
+}

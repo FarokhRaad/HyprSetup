@@ -1,0 +1,21 @@
+set $wallpaper /home/farokh/wallpaper/astronaut_jellyfish.jpg
+
+set $background #0F161E
+set $foreground #8ae1c1
+
+set $color0 #0F161E
+set $color1 #32514E
+set $color2 #595A59
+set $color3 #B85154
+set $color4 #30A95B
+set $color5 #B6A743
+set $color6 #94439B
+set $color7 #8ae1c1
+set $color8 #609d87
+set $color9 #32514E
+set $color10 #595A59
+set $color11 #B85154
+set $color12 #30A95B
+set $color13 #B6A743
+set $color14 #94439B
+set $color15 #8ae1c1

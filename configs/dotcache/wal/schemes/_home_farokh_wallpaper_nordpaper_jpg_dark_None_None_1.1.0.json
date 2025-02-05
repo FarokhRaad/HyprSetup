@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/farokh/wallpaper/nordpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0d1117",
+        "foreground": "#aaaeb2",
+        "cursor": "#aaaeb2"
+    },
+    "colors": {
+        "color0": "#0d1117",
+        "color1": "#606770",
+        "color2": "#626B72",
+        "color3": "#636C74",
+        "color4": "#666D74",
+        "color5": "#656E74",
+        "color6": "#666E75",
+        "color7": "#aaaeb2",
+        "color8": "#76797c",
+        "color9": "#606770",
+        "color10": "#626B72",
+        "color11": "#636C74",
+        "color12": "#666D74",
+        "color13": "#656E74",
+        "color14": "#666E75",
+        "color15": "#aaaeb2"
+    }
+}

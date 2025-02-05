@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/farokh/wallpaper/default.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0C1C29",
+        "foreground": "#dcd1cd",
+        "cursor": "#dcd1cd"
+    },
+    "colors": {
+        "color0": "#0C1C29",
+        "color1": "#5F5B69",
+        "color2": "#9A6861",
+        "color3": "#657389",
+        "color4": "#A38181",
+        "color5": "#B09D9B",
+        "color6": "#CE978E",
+        "color7": "#dcd1cd",
+        "color8": "#9a928f",
+        "color9": "#5F5B69",
+        "color10": "#9A6861",
+        "color11": "#657389",
+        "color12": "#A38181",
+        "color13": "#B09D9B",
+        "color14": "#CE978E",
+        "color15": "#dcd1cd"
+    }
+}
