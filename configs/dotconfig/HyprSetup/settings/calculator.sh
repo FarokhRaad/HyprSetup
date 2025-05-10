@@ -1,1 +1,1 @@
-qalculate-qt
+kcalc

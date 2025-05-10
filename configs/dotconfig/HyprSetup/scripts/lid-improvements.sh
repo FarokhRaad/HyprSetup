@@ -1,4 +1,4 @@
-et#!/bin/bash
+#!/bin/bash
 while IFS= read -r line; do
     # If the line starts with # and the next line is not the lines to be added
     if [[ $line == \#HandleLidSwitchDocked=ignore ]]; then

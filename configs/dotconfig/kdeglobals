@@ -2,7 +2,7 @@
 TerminalApplication=kitty
 
 [Icons]
-Theme=Tela-circle-nord
+Theme=breeze
 
 [KDE]
 widgetStyle=qt6ct-style

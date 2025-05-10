@@ -2,6 +2,9 @@ hyprland
 hyprpaper
 hyprlock
 hypridle
+hyprpicker
+hyprsunset
+wf-recorder
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-gtk
 kitty
@@ -81,3 +84,5 @@ haruna
 krdc
 freerdp2
 libvncserver
+solaar
+kcalc

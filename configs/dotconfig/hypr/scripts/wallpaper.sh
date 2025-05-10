@@ -114,12 +114,12 @@ wal -q -i $used_wallpaper
 source "$HOME/.cache/wal/colors.sh"
 
 # ----------------------------------------------------- 
-# Reload AGS
+# Reload HyprPanel
 # -----------------------------------------------------
 
-echo ":: Reload Hyprpanel"
-hyprpanel -q
-hyprpanel
+#echo ":: Reload Hyprpanel"
+#hyprpanel -q
+#hyprpanel
 
 # ----------------------------------------------------- 
 # Pywalfox

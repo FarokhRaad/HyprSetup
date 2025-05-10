@@ -6,9 +6,5 @@ POSH=agnoster
 # -----------------------------------------------------
 # Prompt
 # -----------------------------------------------------
-eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/zen.toml)"
-
-# -----------------------------------------------------
-# Pywal
-# -----------------------------------------------------
-cat ~/.cache/wal/sequences
+# eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/zen.toml)"
+eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/nordtron.omp.json)"

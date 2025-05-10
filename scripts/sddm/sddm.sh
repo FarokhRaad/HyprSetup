@@ -1,88 +1,105 @@
 #!/bin/bash
 
-# Script to install and configure SDDM
-# Run this script with root privileges
+# === Color and Messaging Setup ===
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
 
-# Check if the script is being run as root
+success() { echo -e "${GREEN}[SUCCESS]${NC} $1"; }
+error()   { echo -e "${RED}[ERROR]${NC} $1"; }
+info()    { echo -e "${BLUE}[INFO]${NC} $1"; }
+warn()    { echo -e "${YELLOW}[WARN]${NC} $1"; }
+
+# === Dry Run Support ===
+DRY_RUN=false
+for arg in "$@"; do
+  [[ "$arg" == "--dry-run" ]] && DRY_RUN=true
+done
+
+run() {
+  if $DRY_RUN; then
+    echo "[DRY RUN] $*"
+  else
+    eval "$@"
+  fi
+}
+
+# === Root Check ===
 if [ "$EUID" -ne 0 ]; then
-  echo "Please run as root"
-  exit
-fi
-
-# Update package repositories
-echo "Updating package repositories..."
-pacman -Syu --noconfirm
-
-# Install SDDM
-echo "Installing SDDM..."
-pacman -S --noconfirm sddm
-
-# Verify if SDDM was successfully installed
-if ! command -v sddm &> /dev/null; then
-  echo "SDDM installation failed. Please check for errors."
+  error "Please run this script as root (use sudo)."
   exit 1
 fi
 
-# Enable SDDM as the default display manager
-# Arch Linux uses systemd to enable SDDM as the display manager
-echo "Configuring SDDM as the default display manager..."
-systemctl enable sddm.service
+# === Banner ===
+if command -v figlet &>/dev/null; then
+  echo -e "${GREEN}"
+  figlet -f slant "SDDM Setup"
+  echo -e "${NC}"
+else
+  echo -e "${GREEN}== SDDM Setup ==${NC}"
+fi
 
-# Copy the provided SDDM configuration file
+# === Install and Enable SDDM ===
+info "Updating system packages..."
+run "pacman -Syu --noconfirm"
+
+info "Installing SDDM..."
+run "pacman -S --noconfirm sddm"
+
+if ! command -v sddm &>/dev/null; then
+  error "SDDM installation failed."
+  exit 1
+fi
+success "SDDM installed successfully."
+
+info "Enabling SDDM to start at boot..."
+run "systemctl enable sddm"
+
+# === Configuration File ===
 CONFIG_FILE="/etc/sddm.conf"
 USER_CONFIG_FILE="./sddm.conf"
 
 if [ -f "$USER_CONFIG_FILE" ]; then
-  echo "Copying user-provided SDDM configuration file..."
-  cp "$USER_CONFIG_FILE" "$CONFIG_FILE"
-  echo "SDDM configuration file copied to $CONFIG_FILE"
+  info "Copying user-provided SDDM configuration file..."
+  run "cp \"$USER_CONFIG_FILE\" \"$CONFIG_FILE\""
+  success "Custom SDDM config installed."
 else
-  echo "User-provided configuration file not found. Using default settings..."
-  # Creating an SDDM configuration file (if it doesn't exist)
   if [ ! -f "$CONFIG_FILE" ]; then
-    echo "Creating default SDDM configuration file..."
-    cat <<EOL > "$CONFIG_FILE"
+    info "Creating default SDDM configuration..."
+    run "cat <<EOL > \"$CONFIG_FILE\"
 [Theme]
-# Default theme for SDDM
 theme=elarun
 
 [Users]
-# Automatically login a user (uncomment and change "username" as needed)
 # autoLogin=username
 
 [Wayland]
-# Enable or disable Wayland sessions
 EnableWayland=false
-EOL
-    echo "Default SDDM configuration file created at $CONFIG_FILE"
+EOL"
+    success "Default config created at $CONFIG_FILE"
   else
-    echo "SDDM configuration file already exists. You can edit $CONFIG_FILE to modify settings as needed."
+    warn "SDDM config already exists. Skipping creation."
   fi
 fi
 
-# Copy Sequoia theme if available
+# === Theme Installation ===
 SEQUOIA_THEME_DIR="/usr/share/sddm/themes/sequoia"
 USER_SEQUOIA_THEME="./sequoia"
 
 if [ -d "$USER_SEQUOIA_THEME" ]; then
-  echo "Copying Sequoia theme to SDDM themes directory..."
-  cp -r "$USER_SEQUOIA_THEME" "$SEQUOIA_THEME_DIR"
-  echo "Sequoia theme copied to $SEQUOIA_THEME_DIR"
-  # Set Sequoia as the default theme
-  sed -i 's/^theme=.*/theme=sequoia/' "$CONFIG_FILE"
+  info "Installing Sequoia theme..."
+  run "cp -r \"$USER_SEQUOIA_THEME\" \"$SEQUOIA_THEME_DIR\""
+  run "sed -i 's/^theme=.*/theme=sequoia/' \"$CONFIG_FILE\""
+  success "Sequoia theme installed and set as default."
 else
-  echo "Sequoia theme not found in the provided location. Skipping theme installation."
+  warn "Sequoia theme not found at $USER_SEQUOIA_THEME. Skipping."
 fi
 
-# Enable the SDDM service at startup
-echo "Enabling SDDM service..."
-systemctl enable sddm
+# === Start SDDM ===
+info "Starting SDDM..."
+run "systemctl start sddm"
 
-# Start SDDM (without rebooting)
-echo "Starting SDDM..."
-systemctl start sddm
-
-# Finish
-echo "SDDM installation and configuration completed successfully."
-
+success "SDDM setup complete."
 exit 0

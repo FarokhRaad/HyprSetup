@@ -20,7 +20,7 @@
   "bar.workspaces.show_icons": true,
   "bar.workspaces.workspaces": 10,
   "bar.workspaces.hideUnoccupied": true,
-  "bar.workspaces.workspaceMask": true,
+  "bar.workspaces.workspaceMask": false,
   "bar.windowtitle.custom_title": true,
   "bar.windowtitle.class_name": true,
   "bar.windowtitle.label": true,
@@ -34,7 +34,7 @@
   "theme.osd.orientation": "horizontal",
   "theme.osd.location": "bottom",
   "theme.osd.monitor": 3,
-  "theme.osd.active_monitor": false,
+  "theme.osd.active_monitor": true,
   "theme.osd.radius": "1em",
   "theme.osd.margins": "0px 0px 50px 0px",
   "theme.osd.muted_zero": false,
@@ -63,7 +63,7 @@
       "left": [
         "dashboard",
         "workspaces",
-        "media"
+        "cava"
       ],
       "middle": [
         "clock"
@@ -94,7 +94,7 @@
   "theme.bar.buttons.opacity": 100,
   "theme.bar.buttons.background_opacity": 0,
   "theme.bar.buttons.monochrome": false,
-  "bar.customModules.cpu.leftClick": "~/.config/HyprSetup/settings/system-monitor.sh",
+  "bar.customModules.cpu.leftClick": "kitty -e btop",
   "bar.customModules.netstat.icon": "",
   "bar.customModules.netstat.pollingInterval": 1000,
   "bar.customModules.kbLayout.leftClick": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
@@ -138,5 +138,14 @@
   "notifications.timeout": 5000,
   "bar.notifications.show_total": true,
   "bar.notifications.hideCountWhenZero": true,
-  "bar.customModules.netstat.round": false
+  "bar.customModules.netstat.round": false,
+  "theme.notification.opacity": 100,
+  "theme.osd.opacity": 100,
+  "bar.customModules.cpu.rightClick": "",
+  "bar.customModules.cpuTemp.leftClick": "kitty -e btop",
+  "bar.customModules.ram.leftClick": "kitty -e btop",
+  "bar.customModules.netstat.label": true,
+  "bar.customModules.cava.showActiveOnly": false,
+  "bar.customModules.cava.leftClick": "menu:media",
+  "theme.bar.menus.monochrome": true
 }
