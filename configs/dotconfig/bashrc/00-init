@@ -2,6 +2,18 @@
 # INIT
 # -----------------------------------------------------
 
+# Enable programmable completion features
+if [[ -n $PS1 && -f /usr/share/bash-completion/bash_completion ]]; then
+    source /usr/share/bash-completion/bash_completion
+fi
+
+# Enable fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Enable zoxide
+eval "$(zoxide init bash)"
+
+
 # -----------------------------------------------------
 # Exports
 # -----------------------------------------------------

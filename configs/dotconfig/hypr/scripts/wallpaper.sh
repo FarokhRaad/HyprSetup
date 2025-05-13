@@ -105,29 +105,49 @@ else
     effect="off"
 fi
 
-# ----------------------------------------------------- 
-# Execute pywal
-# ----------------------------------------------------- 
-
-echo ":: Execute pywal with $used_wallpaper"
-wal -q -i $used_wallpaper
-source "$HOME/.cache/wal/colors.sh"
-
-# ----------------------------------------------------- 
-# Reload HyprPanel
+# -----------------------------------------------------
+# Execute matugen
 # -----------------------------------------------------
 
-#echo ":: Reload Hyprpanel"
-#hyprpanel -q
-#hyprpanel
+echo ":: Execute matugen with $used_wallpaper"
+/usr/bin/matugen image $used_wallpaper -m "dark"
+
+# -----------------------------------------------------
+# Walcord (NOT SUPPORTED)
+# -----------------------------------------------------
+
+if type walcord >/dev/null 2>&1; then
+    walcord
+fi
+
+# -----------------------------------------------------
+# Reload Waybar
+# -----------------------------------------------------
+
+# killall -SIGUSR2 waybar
+
+# -----------------------------------------------------
+# Reload nwg-dock-hyprland
+# -----------------------------------------------------
+
+$HOME/.config/nwg-dock-hyprland/launch.sh &
+
+# -----------------------------------------------------
+# Apply wallpaper to HyprPanel
+# -----------------------------------------------------
+
+# echo ":: Set HyprPanel wallpaper with $used_wallpaper"
+# hyprpanel setWallpaper $used_wallpaper
+# hyprpanel -q
+# hyprpanel
 
 # ----------------------------------------------------- 
 # Pywalfox
 # -----------------------------------------------------
 
-if type pywalfox > /dev/null 2>&1; then
-    pywalfox update
-fi
+#if type pywalfox > /dev/null 2>&1; then
+#    pywalfox update
+#fi
 
 # ----------------------------------------------------- 
 # Created blurred wallpaper
@@ -137,7 +157,6 @@ if [ -f $generatedversions/blur-$blur-$effect-$wallpaperfilename.png ] && [ "$fo
     echo ":: Use cached wallpaper blur-$blur-$effect-$wallpaperfilename"
 else
     echo ":: Generate new cached wallpaper blur-$blur-$effect-$wallpaperfilename with blur $blur"
-    dunstify "Generate new blurred version" "with blur $blur" -h int:value:66 -h string:x-dunst-stack-tag:wallpaper
     magick $used_wallpaper -resize 75% $blurredwallpaper
     echo ":: Resized to 75%"
     if [ ! "$blur" == "0x0" ]; then

@@ -9,4 +9,4 @@ widgetStyle=qt6ct-style
 
 [PreviewSettings]
 EnableRemoteFolderThumbnail=false
-MaximumRemoteSize=0
+MaximumRemoteSize=10485760000

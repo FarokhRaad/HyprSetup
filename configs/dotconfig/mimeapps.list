@@ -1,0 +1,29 @@
+[Added Associations]
+application/x-shellscript=code.desktop;
+application/x-zerosize=code.desktop;
+image/jpeg=org.kde.gwenview.desktop;
+text/plain=code.desktop;
+
+[Default Applications]
+application/pdf=microsoft-edge.desktop;
+application/x-bzip-compressed-tar=org.kde.ark.desktop;
+application/x-compressed-tar=org.kde.ark.desktop;
+application/x-shellscript=code.desktop;
+application/x-tar=org.kde.ark.desktop;
+application/x-xz-compressed-tar=org.kde.ark.desktop;
+application/x-zerosize=code.desktop;
+application/zip=org.kde.ark.desktop;
+audio/mpeg=org.kde.haruna.desktop;
+audio/ogg=org.kde.haruna.desktop;
+audio/x-wav=org.kde.haruna.desktop;
+image/jpeg=org.kde.gwenview.desktop;
+inode/directory=org.kde.dolphin.desktop;
+text/plain=code.desktop;
+video/mp4=org.kde.haruna.desktop;
+video/webm=org.kde.haruna.desktop;
+video/x-matroska=org.kde.haruna.desktop;
+video/x-msvideo=org.kde.haruna.desktop;
+x-scheme-handler/about=microsoft-edge.desktop;
+x-scheme-handler/http=microsoft-edge.desktop;
+x-scheme-handler/https=microsoft-edge.desktop;
+x-scheme-handler/unknown=microsoft-edge.desktop;
